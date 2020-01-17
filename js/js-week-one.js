@@ -1,5 +1,12 @@
 'use strict';
 
+
+
+//sources
+//https://www.codewars.com/kata/58f5c63f1e26ecda7e000029
+//https://www.codewars.com/kata/550498447451fbbd7600041c
+//https://www.codewars.com/kata/523a86aa4230ebb5420001e1
+
 //Exercise 1
 // Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:
 //
