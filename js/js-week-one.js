@@ -70,4 +70,40 @@ const comp = (array1, array2) => {
 
 console.log(comp([121, 144, 19, 161, 19, 144, 19, 11],[11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]), true);
 console.log(comp());
-console.log(comp([121, 144, 19, 161, 19, 144, 19, 11],[132, 14641, 20736, 361, 25921, 361, 20736, 361]))
+console.log(comp([121, 144, 19, 161, 19, 144, 19, 11],[132, 14641, 20736, 361, 25921, 361, 20736, 361]));
+
+
+//Exercise 3
+// In this simple Kata your task is to create a function that turns a string into a Mexican Wave.
+// You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up.
+//     Rules
+// 1.  The input string will always be lower case but maybe empty.
+// 2.  If the character in the string is whitespace then pass over it as if it was an empty seat.
+//     Example
+// wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
+// Good luck and enjoy!
+
+
+function wave (text) {
+
+    let finalArray = [];
+    for ( let i = 0; i < text.length; i++) {
+        let arr = text.split('')
+
+        // in case the element is an empty string we just skip that element and we are goig to the next one
+        if ( arr[i] === ' ') {
+            continue
+        }
+        arr[i] = arr[i].toUpperCase()
+        // console.log(arr)
+        finalArray.push(arr.join(''))// we have to change them to strings bevause they are arrays thats why we use join
+    }
+    return finalArray
+}
+
+//["Hello", "hEllo", "heLlo", "helLo", "hellO"])
+console.log(wave ("hello"));
+
+
+
+
