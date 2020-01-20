@@ -1,15 +1,40 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Today's Date</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
-
 <body>
-
-</body>
+<h1 id="here"> Your age in Days Challenge</h1>
 <script src="js/faith.js"></script>
+<script>
+    let students =
+        `[
+            {
+                "name": "Wonderful",
+                "age": 33,
+                "height": 170
+            },
+            {
+                "name": "Whirl",
+                "age": 22,
+                "height": 350
+            }
+        ]`;
+    //with the backticks ` you parsing into a string to deal with this you can see next ling
+    console.log(JSON.parse(students)[1].age);//Here you are parsing the student grabbing index 1 age
+    console.log(students);
+</script>
 
+
+
+
+
+
+<script src="js/faith.js"></script>
+</body>
 </html>
+
+
