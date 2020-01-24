@@ -55,7 +55,7 @@ function rpsGame(yourChoice) {
     console.log(results);
 
      message = finalMessage(results);// {'message': 'You won', 'color':      'green'}
-     console.log(message);
+    document.getElementById("gameMessage").innerHTML = '<h2>'+ message + '</h2>';
 
 
 rpsFrontEnd =(yourChoice.id, botChoice, message);
@@ -86,6 +86,7 @@ function decideWinner(yourChoice, computerChoice) {
 
     let computerScore = rpsDatabase[computerChoice] [yourChoice];
 
+
     return [yourScore, computerScore];
 }
 
@@ -93,18 +94,19 @@ function decideWinner(yourChoice, computerChoice) {
 
     if (yourScore === 0) {
 
-        return {'message': 'Sorry, better luck next time', 'color':
-                'red'};
+        return 'Sorry, better luck next time,';
 
     } else if (yourScore === 0.5) {
 
-        return {'message': 'Tied!', 'color': 'yellow'};
+        return 'Tied!';
 
     } else {
 
-        return {'message': 'Congrats, you are the winner', 'color': 'green'};
+        return 'Congrats, you are the winner';
     }
 }
+
+
 
 function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
 
@@ -115,7 +117,13 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
     }
 
     //removing images
-    document.getElementById('rock').remove();
+   let card1 = document.getElementById('card1');
+    console.log(card1);
+    console.log(card1.children);
+    // document.getElementById.('card1').remove('rock');
+    card1.parentNode.removeChild(card1)
+
+
     document.getElementById('paper').remove();
     document.getElementById('scissors').remove();
 
@@ -129,6 +137,20 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
 //
 // }
 
+//create a function called isAnagram
+//takes in 2 strings
+//return is anagram if true
+//return false is not anagram
 
+function isAnagram(word1, word2) {
+    letters1 = word1.toLowerCase().split('').sort();
+    letters2 = word2.toLowerCase().split('').sort();
+  return (letters1.join() == letters2.join());
+}
+ console.log(isAnagram("dog", "god"));
+
+// function anagram(s1, s2){
+//     return s1.split("").sort().join("") === s2.split("").sort().join("");
+// }
 
 

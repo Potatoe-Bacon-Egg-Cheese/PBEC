@@ -75,3 +75,7 @@ img {
      align-items: center;
      justify-content: center;
  }
+
+#gameMessage{color: blue;
+                height: 10em;
+                font-size: xx-large}
