@@ -30,3 +30,35 @@ function diceGame(scores) {
     return `p${players[0]}`;
 }
 console.log(diceGame([[6, 2], [4, 3], [3, 4], [5, 4], [3, 5], [1, 5], [4, 3], [1, 5], [1, 5], [5, 6], [2, 2]]));
+
+//https://edabit.com/challenge/tRx22rECqK4dTJTg8
+//Create a function that takes a variable number of groups of items, and returns the number of ways the items can be arranged, with one item from each group. Order does not matter.
+function combinations(items) {
+    return [...arguments].reduce((acc,v) => v ? acc*v : acc+v, 1)
+}
+console.log(combinations(2, 3));
+
+//https://edabit.com/challenge/EfC7rRKdAt8ugcCCT
+//A word-chain is an array of words, where the next word is formed by changing exactly one letter from the previous word. We do not add or subtract letters from words, only change them.
+//
+// Create a function that returns true if an array is a word-chain and false otherwise.
+function isWordChain(words) {
+    return words.every((a, index) => {
+        if (a.length !== words[0].length) {return false};
+        if (index === 0) {return true};
+        return a.split("")
+            .filter((char, charIndex) => char !== words[index - 1][charIndex])
+            .length === 1;
+    })
+}
+console.log(isWordChain(["meal", "seal", "seat", "beat", "beet"]));
+//https://edabit.com/challenge/5S5HBQW6zZp8eH3eL
+//Someone has attempted to censor my strings by replacing every vowel with a *, l*k* th*s. Luckily, I've been able to find the vowels that were removed.
+//
+// Given a censored string and a string of the censored vowels, return the original uncensored string.
+const uncensor = (str, vowels) => {
+    const arr = vowels.split('');
+    return str.replace(/\*/g, () => arr.shift());
+};
+console.log(uncensor("Wh*r* d*d my v*w*ls g*?", "eeioeo"));
+
